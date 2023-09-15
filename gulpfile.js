@@ -19,5 +19,10 @@ gulp.task('includeFiles', function () {
 gulp.task('scss', function () {
     return gulp.src('./src/scss/*.scss')
         .pipe(scss())
-        .pipe(gulp.dest('./dist/css/'))
+        .pipe(gulp.dest('./dist/css/'));
+});
+
+gulp.task('copyImages', function () {
+    return gulp.src('./src/img/**/*')
+        .pipe(gulp.dest('./dist/img/'));
 });
