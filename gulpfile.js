@@ -1,8 +1,10 @@
 import gulp from 'gulp';
 import fileInclude from 'gulp-file-include';
 import gulpSass from 'gulp-sass';
-import * as sass from 'sass'
+import * as sass from 'sass';
 import server from 'gulp-server-livereload';
+import clean from 'gulp-clean';
+import fs from 'fs';
 
 const scss = gulpSass(sass);
 
@@ -15,6 +17,14 @@ const serverSettings = {
     livereload: true,
     open: true,
 }
+
+gulp.task('clean', function (done) {
+    if (fs.existsSync('./dist/')) {
+        return gulp.src('./dist/', { read: false })
+            .pipe(clean());
+    }
+    done();
+})
 
 gulp.task('includeFiles', function () {
     return gulp.src('./src/*.html')
