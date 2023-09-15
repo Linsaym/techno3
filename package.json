@@ -10,6 +10,7 @@
   "author": "LZ",
   "license": "ISC",
   "devDependencies": {
+    "css-loader": "^6.8.1",
     "gulp": "^4.0.2",
     "gulp-clean": "^0.4.0",
     "gulp-file-include": "^2.3.0",
@@ -19,6 +20,16 @@
     "gulp-sass": "^5.1.0",
     "gulp-server-livereload": "^1.9.2",
     "gulp-sourcemaps": "^3.0.0",
-    "sass": "^1.67.0"
+    "sass": "^1.67.0",
+    "style-loader": "^3.3.3",
+    "webpack-stream": "^7.0.0",
+    "@babel/core": "^7.22.19",
+    "@babel/preset-env": "^7.22.15",
+    "gulp-babel": "^8.0.0"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
   }
 }
