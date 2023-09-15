@@ -12,7 +12,8 @@ import notify from 'gulp-notify';
 import webpack from 'webpack-stream';
 import webpackConfig from './webpack.config.js';
 import babel from 'gulp-babel';
-import imageMin from 'gulp-imagemin'
+import imageMin from 'gulp-imagemin';
+import changed from 'gulp-changed';
 
 const scss = gulpSass(sass);
 
@@ -47,6 +48,7 @@ gulp.task('clean', function (done) {
 
 gulp.task('html', function () {
     return gulp.src('./src/*.html')
+        .pipe(changed('./dist/'))
         .pipe(plumber(plumberNotify('HTML')))
         .pipe(fileInclude(fileIncludeSettings))
         .pipe(gulp.dest('./dist/'));
@@ -54,6 +56,7 @@ gulp.task('html', function () {
 
 gulp.task('scss', function () {
     return gulp.src('./src/scss/*.scss')
+        .pipe(changed('./dist/css/'))
         .pipe(plumber(plumberNotify('SCSS')))
         .pipe(sourceMaps.init())
         .pipe(scss())
@@ -64,6 +67,7 @@ gulp.task('scss', function () {
 
 gulp.task('js', function () {
     return gulp.src('./src/js/*.js')
+        .pipe(changed('./dist/js/'))
         .pipe(plumber(plumberNotify('JS')))
         .pipe(babel())
         .pipe(webpack(webpackConfig))
@@ -72,17 +76,20 @@ gulp.task('js', function () {
 
 gulp.task('images', function () {
     return gulp.src('./src/img/**/*')
+        .pipe(changed('./dist/img/'))
         .pipe(imageMin({ verbose: true }))
         .pipe(gulp.dest('./dist/img/'));
 });
 
 gulp.task('fonts', function () {
     return gulp.src('./src/fonts/**/*')
+        .pipe(changed('./dist/fonts/'))
         .pipe(gulp.dest('./dist/fonts/'));
 });
 
 gulp.task('files', function () {
     return gulp.src('./src/files/**/*')
+        .pipe(changed('./dist/files/'))
         .pipe(gulp.dest('./dist/files/'));
 });
 
