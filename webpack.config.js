@@ -11,7 +11,7 @@ const config = {
         rules: [
             {
                 test: /\.css$/,
-                use: ['style-loader', 'css-loader', 'babel-loader'],
+                use: ['style-loader', 'css-loader'],
             },
         ],
     },

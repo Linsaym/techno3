@@ -10,8 +10,11 @@
   "author": "LZ",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.22.19",
+    "@babel/preset-env": "^7.22.15",
     "css-loader": "^6.8.1",
     "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
     "gulp-clean": "^0.4.0",
     "gulp-file-include": "^2.3.0",
     "gulp-group-css-media-queries": "^1.2.2",
@@ -22,14 +25,14 @@
     "gulp-sourcemaps": "^3.0.0",
     "sass": "^1.67.0",
     "style-loader": "^3.3.3",
-    "webpack-stream": "^7.0.0",
-    "@babel/core": "^7.22.19",
-    "@babel/preset-env": "^7.22.15",
-    "gulp-babel": "^8.0.0"
+    "webpack-stream": "^7.0.0"
   },
   "babel": {
     "presets": [
       "@babel/preset-env"
     ]
+  },
+  "dependencies": {
+    "air-datepicker": "^3.4.0"
   }
 }
