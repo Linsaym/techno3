@@ -2,6 +2,7 @@ import gulp from 'gulp';
 import fileInclude from 'gulp-file-include';
 import gulpSass from 'gulp-sass';
 import * as sass from 'sass';
+import sassGlob from 'gulp-sass-glob';
 import server from 'gulp-server-livereload';
 import clean from 'gulp-clean';
 import fs from 'fs';
@@ -59,6 +60,7 @@ gulp.task('scss', function () {
         .pipe(changed('./dist/css/'))
         .pipe(plumber(plumberNotify('SCSS')))
         .pipe(sourceMaps.init())
+        .pipe(sassGlob())
         .pipe(scss())
         // .pipe(groupMedia())
         .pipe(sourceMaps.write())
