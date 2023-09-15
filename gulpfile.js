@@ -12,6 +12,7 @@ import notify from 'gulp-notify';
 import webpack from 'webpack-stream';
 import webpackConfig from './webpack.config.js';
 import babel from 'gulp-babel';
+import imageMin from 'gulp-imagemin'
 
 const scss = gulpSass(sass);
 
@@ -71,6 +72,7 @@ gulp.task('js', function () {
 
 gulp.task('images', function () {
     return gulp.src('./src/img/**/*')
+        .pipe(imageMin({ verbose: true }))
         .pipe(gulp.dest('./dist/img/'));
 });
 
