@@ -5,6 +5,7 @@ import * as sass from 'sass';
 import server from 'gulp-server-livereload';
 import clean from 'gulp-clean';
 import fs from 'fs';
+import sourceMaps from 'gulp-sourcemaps';
 
 const scss = gulpSass(sass);
 
@@ -34,7 +35,9 @@ gulp.task('html', function () {
 
 gulp.task('scss', function () {
     return gulp.src('./src/scss/*.scss')
+        .pipe(sourceMaps.init())
         .pipe(scss())
+        .pipe(sourceMaps.write())
         .pipe(gulp.dest('./dist/css/'));
 });
 
@@ -53,3 +56,9 @@ gulp.task('watch', function () {
     gulp.watch('./src/**/*.html', gulp.parallel('html'));
     gulp.watch('./src/img/**/*', gulp.parallel('images'))
 })
+
+gulp.task('default', gulp.series(
+    'clean',
+    gulp.parallel('html', 'scss', 'images'),
+    gulp.parallel('server', 'watch'),
+))
