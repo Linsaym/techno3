@@ -7,6 +7,8 @@ import clean from 'gulp-clean';
 import fs from 'fs';
 import sourceMaps from 'gulp-sourcemaps';
 // import groupMedia from 'gulp-group-css-media-queries';
+import plumber from 'gulp-plumber';
+import notify from 'gulp-notify';
 
 const scss = gulpSass(sass);
 
@@ -20,6 +22,22 @@ const serverSettings = {
     open: true,
 }
 
+const plumberSCSSSettings = {
+    errorHandler: notify.onError({
+        title: 'Styles',
+        message: 'Error <%= error.message %>',
+        sound: false,
+    })
+}
+
+const plumberHTMLSettings = {
+    errorHandler: notify.onError({
+        title: 'HTML',
+        message: 'Error <%= error.message %>',
+        sound: false,
+    })
+}
+
 gulp.task('clean', function (done) {
     if (fs.existsSync('./dist/')) {
         return gulp.src('./dist/', { read: false })
@@ -30,12 +48,14 @@ gulp.task('clean', function (done) {
 
 gulp.task('html', function () {
     return gulp.src('./src/*.html')
+        .pipe(plumber(plumberHTMLSettings))
         .pipe(fileInclude(fileIncludeSettings))
         .pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('scss', function () {
     return gulp.src('./src/scss/*.scss')
+        .pipe(plumber(plumberSCSSSettings))
         .pipe(sourceMaps.init())
         .pipe(scss())
         // .pipe(groupMedia())
