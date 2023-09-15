@@ -6,6 +6,7 @@ import server from 'gulp-server-livereload';
 import clean from 'gulp-clean';
 import fs from 'fs';
 import sourceMaps from 'gulp-sourcemaps';
+// import groupMedia from 'gulp-group-css-media-queries';
 
 const scss = gulpSass(sass);
 
@@ -37,6 +38,7 @@ gulp.task('scss', function () {
     return gulp.src('./src/scss/*.scss')
         .pipe(sourceMaps.init())
         .pipe(scss())
+        // .pipe(groupMedia())
         .pipe(sourceMaps.write())
         .pipe(gulp.dest('./dist/css/'));
 });
