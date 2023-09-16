@@ -7,13 +7,20 @@ import server from 'gulp-server-livereload';
 import clean from 'gulp-clean';
 import fs from 'fs';
 import sourceMaps from 'gulp-sourcemaps';
+import groupMedia from 'gulp-group-css-media-queries';
 import plumber from 'gulp-plumber';
 import notify from 'gulp-notify';
 import webpack from 'webpack-stream';
 import webpackConfig from './../webpack.config.js';
-// import babel from 'gulp-babel';
-// import imageMin from 'gulp-imagemin';
+import babel from 'gulp-babel';
+import imageMin from 'gulp-imagemin';
 import changed from 'gulp-changed';
+import autoprefixer from 'gulp-autoprefixer';
+import csso from 'gulp-csso';
+import htmlclean from 'gulp-htmlclean';
+import webp from 'gulp-webp';
+import webpHTML from 'gulp-webp-html';
+import webpCSS from 'gulp-webp-css';
 
 const scss = gulpSass(sass);
 
@@ -38,71 +45,73 @@ const plumberNotify = (title) => {
 }
 
 
-gulp.task('clean:dev', function (done) {
-    if (fs.existsSync('./build/')) {
-        return gulp.src('./build/', {read: false})
+gulp.task('clean:prod', function (done) {
+    if (fs.existsSync('./prod/')) {
+        return gulp.src('./prod/', {read: false})
             .pipe(clean());
     }
     done();
 })
 
-gulp.task('html:dev', function () {
+gulp.task('html:prod', function () {
     return gulp.src(['./src/html/**/*.html', '!./src/html/blocks/*.html'])
-        .pipe(changed('./build/', { hasChanged: changed.compareContents }))
+        .pipe(changed('./prod/'))
         .pipe(plumber(plumberNotify('HTML')))
         .pipe(fileInclude(fileIncludeSettings))
-        .pipe(gulp.dest('./build/'));
+        .pipe(webpHTML())
+        .pipe(htmlclean())
+        .pipe(gulp.dest('./prod/'));
 });
 
-gulp.task('scss:dev', function () {
+gulp.task('scss:prod', function () {
     return gulp.src('./src/scss/*.scss')
-        .pipe(changed('./build/css/'))
+        .pipe(changed('./prod/css/'))
         .pipe(plumber(plumberNotify('SCSS')))
         .pipe(sourceMaps.init())
+        .pipe(autoprefixer())
         .pipe(sassGlob())
+        .pipe(webpCSS())
+        .pipe(groupMedia())
         .pipe(scss())
+        .pipe(csso())
         .pipe(sourceMaps.write())
-        .pipe(gulp.dest('./build/css/'));
+        .pipe(gulp.dest('./prod/css/'));
 });
 
-gulp.task('js:dev', function () {
+gulp.task('js:prod', function () {
     return gulp.src('./src/js/*.js')
-        .pipe(changed('./build/js/'))
+        .pipe(changed('./prod/js/'))
         .pipe(plumber(plumberNotify('JS')))
-        // .pipe(babel())
+        .pipe(babel())
         .pipe(webpack(webpackConfig))
-        .pipe(gulp.dest('./build/js'));
+        .pipe(gulp.dest('./prod/js'));
 })
 
-gulp.task('images:dev', function () {
+gulp.task('images:prod', function () {
     return gulp.src('./src/img/**/*')
-        .pipe(changed('./build/img/'))
-        // .pipe(imageMin({ verbose: true }))
-        .pipe(gulp.dest('./build/img/'));
+        .pipe(changed('./prod/img/'))
+        .pipe(webp())
+        .pipe(gulp.dest('./prod/img/'))
+
+        .pipe(gulp.src('./src/img/**/*'))
+        .pipe(changed('./prod/img/'))
+        .pipe(imageMin({ verbose: true }))
+        .pipe(gulp.dest('./prod/img/'));
 });
 
-gulp.task('fonts:dev', function () {
+gulp.task('fonts:prod', function () {
     return gulp.src('./src/fonts/**/*')
-        .pipe(changed('./build/fonts/'))
-        .pipe(gulp.dest('./build/fonts/'));
+        .pipe(changed('./prod/fonts/'))
+        .pipe(gulp.dest('./prod/fonts/'));
 });
 
-gulp.task('files:dev', function () {
+gulp.task('files:prod', function () {
     return gulp.src('./src/files/**/*')
-        .pipe(changed('./build/files/'))
-        .pipe(gulp.dest('./build/files/'));
+        .pipe(changed('./prod/files/'))
+        .pipe(gulp.dest('./prod/files/'));
 });
 
-gulp.task('server:dev', function () {
-    return gulp.src('./build/')
+gulp.task('server:prod', function () {
+    return gulp.src('./prod/')
         .pipe(server(serverSettings));
-})
-
-gulp.task('watch:dev', function () {
-    gulp.watch('./src/scss/**/*.scss', gulp.parallel('scss:dev'));
-    gulp.watch('./src/**/*.html', gulp.parallel('html:dev'));
-    gulp.watch('./src/img/**/*', gulp.parallel('images:dev'))
-    gulp.watch('./src/fonts/**/*', gulp.parallel('fonts:dev'))
-    gulp.watch('./src/files/**/*', gulp.parallel('files:dev'))
-    gulp.watch('./src/js/**/*.js', gulp.parallel('js:dev'))
 })
