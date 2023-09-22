@@ -2,7 +2,7 @@ import mobileNav from './modules/mobile-nav.js';
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 import { Navigation, Pagination } from 'swiper/modules';
-import 'swiper/css/grid';
+import IMask from 'imask';
 
 mobileNav();
 
@@ -51,3 +51,10 @@ const swiper = new Swiper('.service__slider', {
 
     }
 })
+
+let phoneInput = document.querySelector(".phone");
+const phoneMask = new IMask(phoneInput, {
+    mask: "+{7}(000)000-00-00",
+});
+
+
