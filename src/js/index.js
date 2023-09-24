@@ -9,11 +9,8 @@ mobileNav();
 const swiper = new Swiper('.service__slider', {
     slidesPerView: 4,
     spaceBetween: 23,
-    grid: {            //added
-        rows: 2,         //added
-    },                 //added
-    pagination: {
-        // el: '.swiper-pagination',
+    grid: {
+        rows: 2,
     },
     navigation: {
         nextEl: ".swiper-next",
@@ -28,29 +25,34 @@ const swiper = new Swiper('.service__slider', {
     breakpoints: {
         1200: {
             slidesPerView: 4,
+            grid: {
+                rows: 2,
+            },
         },
         1024: {
             slidesPerView: 3,
-            grid: {            //added
-                rows: 2,         //added
+            grid: {
+                rows: 2,
             },
         },
         768: {
             slidesPerView: 2,
-            grid: {            //added
-                rows: 3,         //added
+            grid: {
+                rows: 3,
             },
         },
         0: {
             slidesPerView: 1,
             grid: {
-                fill: 'row',
-                rows: 4,         //added
+                rows: 4,
             },
         }
-
     }
 })
+
+window.addEventListener('resize', () => {
+    swiper.update();
+});
 
 let phoneInput = document.querySelector(".phone");
 const phoneMask = new IMask(phoneInput, {
