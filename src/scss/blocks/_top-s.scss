@@ -72,12 +72,12 @@
   }
 
   &_service {
-    background: url(../img/centres/top/bg.png) center center no-repeat;
+    background: center / cover url(../img/centres/top/bg.png);
     background-size: cover;
   }
 
   &_know {
-    background: url(../img/know/top/bg.png) center center no-repeat;
+    background: center / cover url(../img/know/top/bg.png);
     background-size: cover;
   }
 }

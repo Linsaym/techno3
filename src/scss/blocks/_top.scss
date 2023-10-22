@@ -4,15 +4,14 @@
   height: 100%;
   min-height: calc(100vh - 130px);
 
-  //min-height: fit-content;
-  //max-height: calc(100vh - 130px);
-  background: url(../img/top/bg.png) center center no-repeat;
-  background-size: cover;
+  background: center / cover url(../img/top/bg.png);
 
   &__inner {
+    flex-direction: column;
+    align-items: center;
     position: relative;
     z-index: 10;
-    padding: 83px 0 145px;
+    padding: 83px 0 50px;
 
     @include mobile {
       padding: 30px 0 30px;
@@ -21,14 +20,7 @@
   }
 
   &__text {
-    grid-column: 2 / span 6;
-    @include tablet {
-      grid-column: 2 / span 7;
-
-    }
-    @include mobile {
-      grid-column: span 12;
-    }
+    text-align: center;
   }
 
   &__title {
@@ -89,6 +81,31 @@
     background-color: rgba(0, 0, 0, .6);
   }
 
+  &__maps {
+    gap: 50px;
+    margin-top: 50px;
+    width: 100%;
+    justify-content: space-between;
+
+    &-card {
+      width: 50%;
+
+      &-map {
+        iframe {
+          width: 100%;
+        }
+      }
+
+      @include tablet {
+        width: 100%;
+      }
+    }
+
+    @include tablet {
+      flex-direction: column;
+    }
+  }
+
   @include mobile {
     min-height: calc(100vh - 75px);
   }
@@ -96,4 +113,6 @@
   @include mini-mobile {
     min-height: calc(100vh - 60px);
   }
+
+
 }
