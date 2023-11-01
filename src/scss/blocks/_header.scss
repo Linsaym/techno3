@@ -1,10 +1,91 @@
 .header {
-	background-color: rgb(195, 220, 231);
-	padding: 50px 0;
+  background-color: var(--page-secondary-bg);
 
-	&__row {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	}
+  a {
+    transition: color 0.3s ease-in-out;
+    &:hover {
+      color: var(--accent);
+    }
+
+    &:active {
+      color: var(--active);
+    }
+  }
+
+  svg {
+    transition: fill 0.3s ease-in-out;
+    &:hover * {
+      fill: var(--accent);
+    }
+
+    &:active * {
+      fill: var(--active);
+    }
+  }
+
+
+  &__row {
+    height: 130px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include mobile {
+      height: 75px;
+    }
+    @include mini-mobile {
+      height: 60px;
+    }
+  }
+
+  &__logo-link {
+    height: 100%;
+  }
+  &__logo {
+    height: 100%;
+  }
+
+  &__nav {
+    margin-right: auto;
+    margin-left: 116px;
+    margin-top: 11px;
+    font-size: 20px;
+
+    @include for-desktop {
+      font-size: 16px;
+    }
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    gap: 65px;
+  }
+
+  &__social {
+    margin-top: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__phone {
+  }
+
+  &__mail {
+  }
+
+  &__icons {
+    display: flex;
+    gap: 26px;
+  }
+
+  &__icon {
+  }
 }

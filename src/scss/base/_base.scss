@@ -3,7 +3,42 @@ html {
 }
 
 body {
+	position: relative;
 	background-color: var(--page-bg);
 	color: var(--text-color);
     font-family: var(--font-main);
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+
+	@include mobile {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+.flex {
+	display: flex;
+}
+
+.title {
+	color: var(--text-color);
+	font-family: var(--font-SB);
+	font-size: 50px;
+	font-weight: 600;
+	text-align: center;
+
+	@include mobile {
+		font-size: 36px;
+	}
+
+	@include mini-mobile {
+		font-size: 32px;
+	}
+}
+
+*:focus-visible {
+	outline: 2px solid var(--active);
+	outline-offset: 3px;
 }

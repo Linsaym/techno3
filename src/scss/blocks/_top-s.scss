@@ -1,0 +1,83 @@
+.top-s {
+  position: relative;
+
+  &__inner {
+    padding: 10px 0;
+    min-height: 350px;
+    max-height: fit-content;
+    position: relative;
+    z-index: 10;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__title {
+    margin-bottom: 19px;
+    text-align: center;
+    font-family: var(--font-B);
+    font-size: 64px;
+    font-weight: 700;
+
+    @include tablet {
+      font-size: 45px;
+    }
+
+    @include small-tablet {
+      font-size: 42px;
+    }
+
+    @include mobile {
+      text-align: left;
+      font-size: 36px;
+    }
+
+    @include mini-mobile {
+      font-size: 30px;
+    }
+  }
+
+  &__descr {
+    width: 744px;
+    margin: 0 auto;
+    font-family: var(--font-SB);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px; /* 150% */
+
+    @include tablet {
+      font-size: 22px;
+    }
+
+    @include small-tablet {
+      width: auto;
+      font-size: 16px;
+    }
+
+    @include mini-mobile {
+    }
+  }
+
+  &:before {
+
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .6);
+  }
+
+  &_service {
+    background: center / cover url(../img/centres/top/bg.png);
+    background-size: cover;
+  }
+
+  &_know {
+    background: center / cover url(../img/know/top/bg.png);
+    background-size: cover;
+  }
+}

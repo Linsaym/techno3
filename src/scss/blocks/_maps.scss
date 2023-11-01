@@ -1,0 +1,84 @@
+.maps {
+
+  &__inner {
+    padding: 100px 0;
+
+    @include mobile {
+      padding: 30px 0;
+    }
+  }
+
+  &__list {
+    gap: 78px;
+
+    @include tablet {
+      gap: 40px 0;
+    }
+  }
+
+  &__card {
+    grid-column: 6 span;
+    display: flex;
+    padding: 30px 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+    background: var(--page-secondary-bg);
+    box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 0.25);
+
+    &-img {
+      width: 100%;
+    }
+
+    &-address {
+      padding: 15px 0;
+      text-align: center;
+      height: 100%;
+      width: 100%;
+      font-family: var(--font-SB);
+      font-size: 24px;
+      font-weight: 600;
+      background: var(--page-bg);
+
+      @include tablet {
+        font-size: 18px;
+      }
+    }
+
+    &-links {
+      margin-top: 35px;
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+
+      svg {
+        @include mobile {
+          height: 39px;
+        }
+      }
+    }
+
+    &-map {
+      iframe {
+        width: 100%;
+      }
+    }
+
+    &_offset {
+      width: 100%;
+      padding: 0 30px;
+
+      @include mobile {
+        padding: 0 17px;
+      }
+    }
+
+    @include tablet {
+      grid-column: 2 / 10 span;
+    }
+
+    @include mobile {
+      grid-column: 4 span;
+    }
+  }
+}

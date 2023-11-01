@@ -1,14 +1,190 @@
 .footer {
-	background-color: rgb(62, 62, 62);
-	padding: 50px 0;
-	font-size: 32px;
-    color: #fff;
+	padding: 29px 0 0;
+	background-color: var(--page-secondary-bg);
 
-	h1 {
-		font-size: 32px;
+	a {
+		transition: color 0.3s ease-in-out;
+		&:hover {
+			color: var(--accent);
+		}
+
+		&:active {
+			color: var(--active);
+		}
 	}
 
-	@media (max-width: 1200px) {
-		font-size: 26px;
+	svg {
+		transition: fill 0.3s ease-in-out;
+		&:hover * {
+			fill: var(--accent);
+		}
+
+		&:active * {
+			fill: var(--active);
+		}
+	}
+
+	&__top {
+		grid-template-rows: repeat(3, 1fr);
+		padding-bottom: 20px;
+		font-size: 25px;
+
+		@include for-desktop {
+			font-size: 20px;
+		}
+
+		@include tablet {
+			font-size: 18px;
+		}
+
+		@include small-tablet {
+			font-size: 20px;
+		}
+
+		@include mobile {
+			font-size: 16px;
+		}
+
+		@include mini-mobile {
+			font-size: 14px;
+		}
+	}
+
+	&__logo {
+		grid-column: 3 span;
+		grid-row: 3 span;
+
+		img {
+			@include mobile {
+				width: 200px;
+			}
+		}
+
+		@include small-tablet {
+			grid-column: 5 span;
+		}
+
+		@include mobile {
+			grid-column: 2 span;
+			grid-row: 2 span;
+		}
+
+	}
+
+	&__nav {
+		justify-content: space-between;
+		align-items: center;
+		grid-column: 4 / 8 span;
+		@include tablet {
+			padding-bottom: 10px;
+			grid-column: 4 / 3 span;
+			grid-row: 2 span;
+			flex-direction: column;
+			align-items: start;
+		}
+
+		@include small-tablet {
+			grid-column: 7 / 5 span;
+			grid-row: 3 span;
+			justify-content: space-around;
+		}
+
+		@include mobile {
+			grid-column: 3 / 2 span;
+			grid-row: 2 span;
+		}
+	}
+
+	&__social {
+		justify-content: space-between;
+		align-items: center;
+		grid-column: 4 / 9 span;
+		@include tablet {
+			margin-left: auto;
+			grid-column: 7 / 6 span;
+			grid-row: 2 span;
+			justify-content: space-around;
+			flex-direction: column;
+			align-items: start;
+		}
+
+		@include small-tablet {
+			grid-column: 12 span;
+			margin-left: 0;
+			justify-content: space-between;
+			gap: 10px;
+			margin-bottom: 15px;
+		}
+
+		@include mobile {
+			grid-column: 4 span;
+			grid-row: 3 / 1 span;
+			justify-content: space-around;
+		}
+	}
+
+	&__icons {
+		justify-content: center;
+		gap: 44px;
+		align-items: center;
+		grid-column: 5 / 5 span;
+
+		svg {
+			@include tablet {
+				height: 40px;
+			}
+		}
+
+		@include tablet {
+			grid-column: 4 / 6 span;
+		}
+
+		@include mobile {
+			grid-column: 4 span;
+		}
+
+	}
+
+	&__bottom {
+		justify-content: space-between;
+		padding: 27px 40px;
+		border-top: 1px solid #D9D9D9;
+
+		@include small-tablet {
+			padding: 27px 0;
+		}
+
+		@include mobile {
+			flex-direction: column;
+			gap: 8px;
+		}
+	}
+
+	&__descr {
+		font-family: var(--font-SB);
+		font-size: 25px;
+		font-weight: 600;
+		max-width: 400px;
+
+		@include for-desktop {
+			font-size: 20px;
+			max-width: 320px;
+		}
+
+		@include small-tablet {
+			font-size: 18px;
+			max-width: 280px;
+		}
+
+		@include mobile {
+			max-width: fit-content;
+			font-size: 11px;
+		}
+	}
+
+	&__ip {
+		@include mobile {
+			font-size: 14px;
+		}
 	}
 }

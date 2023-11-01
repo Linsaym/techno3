@@ -1,0 +1,118 @@
+.top {
+  position: relative;
+
+  height: 100%;
+  min-height: calc(100vh - 130px);
+
+  background: center / cover url(../img/top/bg.png);
+
+  &__inner {
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    padding: 83px 0 50px;
+
+    @include mobile {
+      padding: 30px 0 30px;
+      align-items: center;
+    }
+  }
+
+  &__text {
+    text-align: center;
+  }
+
+  &__title {
+    font-family: var(--font-B);
+    margin-bottom: 19px;
+    color: var(--text-color);
+    font-size: 64px;
+    font-weight: 700;
+
+    @include tablet {
+      font-size: 45px;
+    }
+
+    @include small-tablet {
+      font-size: 42px;
+    }
+
+    @include mobile {
+      font-size: 36px;
+    }
+
+    @include mini-mobile {
+      font-size: 30px;
+    }
+  }
+
+  &__descr {
+    font-family: var(--font-SB);
+    color: var(--text-color);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px; /* 150% */
+
+    @include tablet {
+      font-size: 22px;
+    }
+    @include small-tablet {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    @include mini-mobile {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .6);
+  }
+
+  &__maps {
+    gap: 50px;
+    margin-top: 50px;
+    width: 100%;
+    justify-content: space-between;
+
+    &-card {
+      width: 50%;
+
+      &-map {
+        iframe {
+          width: 100%;
+        }
+      }
+
+      @include tablet {
+        width: 100%;
+      }
+    }
+
+    @include tablet {
+      flex-direction: column;
+    }
+  }
+
+  @include mobile {
+    min-height: calc(100vh - 75px);
+  }
+
+  @include mini-mobile {
+    min-height: calc(100vh - 60px);
+  }
+
+
+}

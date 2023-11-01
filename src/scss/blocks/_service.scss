@@ -1,0 +1,96 @@
+.service {
+
+  &__inner {
+    position: relative;
+    padding: 29px 0 117px;
+  }
+
+  &__title {
+    margin-bottom: 59px;
+  }
+
+  &__slider {
+    width: 100%;
+    height: 790px;
+
+    .swiper-slide {
+      height: calc((100% - 23px) / 2);
+
+      @include tablet {
+        height: calc((100% - 46px) / 3);
+      ;
+      }
+
+      @include small-tablet {
+        height: calc((100% - 69px) / 4);
+      ;
+      }
+    }
+
+    @include tablet {
+      height: 1177px;
+    }
+
+    @include small-tablet {
+      height: 1577px;
+    }
+  }
+
+  &__card {
+    padding: 28px 19.5px 75px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+    background: #000;
+
+    &-title {
+      text-align: center;
+      font-family: var(--font-SB);
+      font-size: 24px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    &-img-holder {
+      margin-top: auto;
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    gap: 15px;
+    right: 35px;
+    bottom: 37px;
+
+    @include mobile {
+      display: none;
+    }
+  }
+}
+
+.swiper {
+  &-btn {
+    cursor: pointer;
+
+    transition: scale 0.3s ease-in-out;
+
+    &:hover {
+      scale: 1.1;
+    }
+  }
+
+  &-scrollbar {
+    display: none;
+    width: 90%;
+    margin-bottom: 63px;
+    
+    @include mobile {
+      display: block;
+    }
+  }
+}
+
+

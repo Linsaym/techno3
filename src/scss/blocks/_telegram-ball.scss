@@ -1,0 +1,36 @@
+.telegram-ball {
+  width: 75px;
+  height: 75px;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  z-index: 1000;
+
+  transition: scale 0.3s ease-in-out;
+  animation: bounce2 16.5s ease infinite 15s;
+  &:hover {
+    scale: 1.1;
+  }
+
+  @include tablet {
+    bottom: 40px;
+    right: 40px;
+  }
+
+  @include small-tablet {
+    bottom: 30px;
+    right: 30px;
+  }
+
+  @include mobile {
+    width: 70px;
+    height: 70px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  @include mini-mobile {
+    bottom: 10px;
+    right: 10px;
+  }
+}
