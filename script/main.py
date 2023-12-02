@@ -1,8 +1,8 @@
 from telethon import TelegramClient, events
 from datetime import timedelta
 # api_id and api_hash from https://my.telegram.org/apps
-api_id = 123
-api_hash = '123'
+api_id = 29634954
+api_hash = 'a5882f3c71bf38d306afb534cc3706f7'
 one_hour = timedelta(hours=1)
 
 client = TelegramClient('user', api_id, api_hash,
@@ -19,7 +19,7 @@ message = "На связи Технократ!\nСкоро вам ответит
 @client.on(events.NewMessage())
 async def handler(event):
     sender = await event.get_input_sender()
-    if hasattr(sender, 'user_id'):
+    if event.is_private:
         messages = []
         async for mes in (client.iter_messages(sender, limit=2)):
             messages.append(mes.date)

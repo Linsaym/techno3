@@ -1,0 +1,27 @@
+.notification {
+  z-index: 100;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  padding: 15px;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #fff;
+  animation: fadeInOut 0.5s ease-out; /* Анимация появления и исчезновения */
+
+
+  @include mobile {
+    bottom: 10px;
+    left: 10px;
+    max-width: 180px;
+  }
+}
+
+.success {
+  background-color: #4CAF50; /* Зеленый цвет для успешного уведомления */
+}
+
+.error {
+  background-color: #f44336; /* Красный цвет для уведомления об ошибке */
+}
