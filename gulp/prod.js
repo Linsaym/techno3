@@ -6,7 +6,6 @@ import sassGlob from 'gulp-sass-glob';
 import server from 'gulp-server-livereload';
 import clean from 'gulp-clean';
 import fs from 'fs';
-import sourceMaps from 'gulp-sourcemaps';
 import groupMedia from 'gulp-group-css-media-queries';
 import plumber from 'gulp-plumber';
 import notify from 'gulp-notify';
@@ -67,14 +66,12 @@ gulp.task('scss:prod', function () {
     return gulp.src('./src/scss/*.scss')
         .pipe(changed('./prod/css/'))
         .pipe(plumber(plumberNotify('SCSS')))
-        .pipe(sourceMaps.init())
         .pipe(autoprefixer())
         .pipe(sassGlob())
         .pipe(webpCSS())
         .pipe(groupMedia())
         .pipe(scss())
         .pipe(csso())
-        .pipe(sourceMaps.write())
         .pipe(gulp.dest('./prod/css/'));
 });
 
