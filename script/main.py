@@ -1,8 +1,8 @@
 from telethon import TelegramClient, events
 from datetime import timedelta
-# api_id and api_hash from https://my.telegram.org/apps
-api_id = 29634954
-api_hash = 'a5882f3c71bf38d306afb534cc3706f7'
+
+api_id = # Ваш id
+api_hash = # Ваш hash
 one_hour = timedelta(hours=1)
 
 client = TelegramClient('user', api_id, api_hash,

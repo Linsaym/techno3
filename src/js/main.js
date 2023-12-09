@@ -57,7 +57,7 @@ const phoneMask = new IMask(phoneInput, {
     mask: "+{7}(000)000-00-00",
 });
 
-emailjs.init('lAgvLbQogIVOvD8PP')
+emailjs.init('ваш Public Key')
 
 const btn = document.getElementById('button');
 
@@ -67,8 +67,8 @@ document.getElementById('form')
         if (event.target[0].value.length !== 16) {
             showErrorNotification('Некорректный номер')
         } else {
-            const serviceID = 'default_service';
-            const templateID = 'template_45oyzho';
+            const serviceID = 'Ваш serviceID';
+            const templateID = 'Ваш templateID';
             emailjs.sendForm(serviceID, templateID, this)
                 .then(res => {
                     showSuccessNotification('Мы получили вашу заявку');
