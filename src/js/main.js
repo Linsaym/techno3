@@ -21,19 +21,19 @@ const swiper = new Swiper('.service__slider', {
         hide: false,
     },
     breakpoints: {
-        1200: {
+        1200.99: {
             slidesPerView: 4,
             grid: {
                 rows: 2,
             },
         },
-        1024: {
+        1024.99: {
             slidesPerView: 3,
             grid: {
                 rows: 2,
             },
         },
-        768: {
+        768.99: {
             slidesPerView: 2,
             grid: {
                 rows: 3,
@@ -57,7 +57,7 @@ const phoneMask = new IMask(phoneInput, {
     mask: "+{7}(000)000-00-00",
 });
 
-emailjs.init('ваш Public Key')
+emailjs.init('lAgvLbQogIVOvD8PP')
 
 const btn = document.getElementById('button');
 
@@ -67,8 +67,16 @@ document.getElementById('form')
         if (event.target[0].value.length !== 16) {
             showErrorNotification('Некорректный номер')
         } else {
-            const serviceID = 'Ваш serviceID';
-            const templateID = 'Ваш templateID';
+            // Отключаем кнопку
+            btn.disabled = true;
+
+            // Ждем 5 секунд, затем включаем кнопку обратно
+            setTimeout(function() {
+                btn.disabled = false;
+            }, 5000);
+
+            const serviceID = 'service_4zjbeqe';
+            const templateID = 'template_q2pwz4f';
             emailjs.sendForm(serviceID, templateID, this)
                 .then(res => {
                     showSuccessNotification('Мы получили вашу заявку');

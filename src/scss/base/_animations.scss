@@ -25,3 +25,12 @@
     transform: translateY(20px);
   }
 }
+
+@keyframes slideIn {
+  0% {
+    left: -500px;
+  }
+  100% {
+    left: 20px;
+  }
+}
