@@ -11,28 +11,9 @@
 
   &__slider {
     width: 100%;
-    height: 790px;
-
+    height: auto;
+    //height: 1199px;
     .swiper-slide {
-      height: calc((100% - 23px) / 2);
-
-      @include tablet {
-        height: calc((100% - 46px) / 3);
-      ;
-      }
-
-      @include small-tablet {
-        height: calc((100% - 69px) / 4);
-      ;
-      }
-    }
-
-    @include tablet {
-      height: 1177px;
-    }
-
-    @include small-tablet {
-      height: 1577px;
     }
   }
 
@@ -46,12 +27,25 @@
     border-radius: 40px;
     background: #000;
 
+    @include mobile {
+      padding: 25px 12px;
+      border-radius: 20px;
+    }
+
     &-title {
       text-align: center;
       font-family: var(--font-SB);
       font-size: 24px;
       font-weight: 600;
       text-transform: uppercase;
+
+      @include mobile {
+        font-size: 16px;
+      }
+
+      @include mid-mobile {
+        font-size: 14px;
+      }
     }
 
     &-img-holder {
@@ -90,6 +84,13 @@
     @include mobile {
       display: block;
     }
+  }
+
+  &-slide {
+    height: auto !important;
+  }
+
+  &-open path {
   }
 }
 

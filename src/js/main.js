@@ -8,7 +8,8 @@ const swiper = new Swiper('.service__slider', {
     slidesPerView: 4,
     spaceBetween: 23,
     grid: {
-        rows: 2,
+        rows: -1,
+        fill: "row"
     },
     navigation: {
         nextEl: ".swiper-next",
@@ -22,25 +23,36 @@ const swiper = new Swiper('.service__slider', {
     },
     breakpoints: {
         1200.99: {
+            spaceBetween: 23,
             slidesPerView: 4,
             grid: {
                 rows: 2,
             },
         },
         1024.99: {
+            spaceBetween: 23,
             slidesPerView: 3,
             grid: {
                 rows: 2,
             },
         },
         768.99: {
+            spaceBetween: 23,
             slidesPerView: 2,
             grid: {
                 rows: 3,
             },
         },
+        576.99: {
+            spaceBetween: 23,
+            slidesPerView: 2,
+            grid: {
+                rows: 4,
+            },
+        },
         0: {
-            slidesPerView: 1,
+            spaceBetween: 10,
+            slidesPerView: 2,
             grid: {
                 rows: 4,
             },
@@ -49,8 +61,68 @@ const swiper = new Swiper('.service__slider', {
 })
 
 window.addEventListener('resize', () => {
+    isSliderView = true;
+    toggleViewButtonPic.style.transform = 'rotateZ(0)';
     swiper.update();
 });
+
+const toggleViewButton = document.getElementById('toggleViewButton');
+let toggleViewButtonPic = document.querySelector('#toggleViewButton svg')
+let isSliderView = true;
+
+toggleViewButton.addEventListener('click', function () {
+    isSliderView = !isSliderView;
+
+
+    if (isSliderView) {
+        toggleViewButtonPic.style.transform = 'rotateZ(0)';
+        // Показываем слайдер
+        switch (swiper.currentBreakpoint) {
+            case '1200.99': {
+                swiper.params.grid.rows = 2;
+                break
+            }
+            case '1024.99': {
+                swiper.params.grid.rows = 2;
+                break
+            }
+            case '768.99': {
+                swiper.params.grid.rows = 3;
+                break
+            }
+            case '576.99': {
+                swiper.params.grid.rows = 4;
+                break
+            }
+        }
+    } else {
+        toggleViewButtonPic.style.transform = 'rotateZ(180deg)';
+        // Показываем сетку
+        switch (swiper.currentBreakpoint) {
+            case '1200.99': {
+                swiper.params.grid.rows = 4;
+                break
+            }
+            case '1024.99': {
+                swiper.params.grid.rows = 5;
+                break
+            }
+            case '768.99': {
+                swiper.params.grid.rows = 8;
+                break
+            }
+            case '576.99': {
+                swiper.params.grid.rows = 8;
+                break
+            }
+
+        }
+    }
+
+    // Обновляем Swiper
+    swiper.update();
+});
+
 
 let phoneInput = document.querySelector(".phone");
 const phoneMask = new IMask(phoneInput, {
@@ -71,7 +143,7 @@ document.getElementById('form')
             btn.disabled = true;
 
             // Ждем 5 секунд, затем включаем кнопку обратно
-            setTimeout(function() {
+            setTimeout(function () {
                 btn.disabled = false;
             }, 5000);
 
