@@ -24,8 +24,8 @@ async def handler(event):
     if event.chat_id == sender.user_id:
         now = datetime.now()
         is_working_hours = (
-                (now.weekday() < 5 and 9 <= now.hour < 20) or
-                (now.weekday() >= 5 and 11 <= now.hour < 18)
+                (now.weekday() < 5 and 9 - 4 <= now.hour < 20 - 4) or
+                (now.weekday() >= 5 and 11 - 4 <= now.hour < 18 - 4)
         )
 
         if event.is_private:
