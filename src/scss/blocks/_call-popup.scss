@@ -1,0 +1,76 @@
+.call-popup {
+  z-index: 100;
+
+  gap: 15px;
+  padding: 25px;
+  position: fixed;
+  bottom: 20px;
+  left: -500px;
+  background-color: var(--page-bg);
+  border-radius: 3px;
+  border: 1px solid var(--page-bg);
+  box-shadow:0px 0px 15px 5px var(--active);
+  -webkit-box-shadow:0px 0px 15px 5px var(--active);
+  transition: box-shadow 0.2s ease-out, -webkit-box-shadow 0.2s ease-out, left 1s ease-out;
+  animation: slideIn 1s ease-in forwards 20s;
+
+  @include mobile {
+    padding: 15px;
+    bottom: 10px;
+    transform: translateX(-10px);
+  }
+
+  &:hover {
+    box-shadow:0px 0px 15px 5px var(--accent);
+    -webkit-box-shadow:0px 0px 15px 5px var(--accent);
+
+    & .call-popup__tel {
+      color: var(--accent);
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 18px;
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+
+  &__tel {
+    color: var(--active);
+    transition: color 0.2s ease-out;
+  }
+
+  &__close-btn {
+    position: absolute;
+    top: -22px;
+    right: -22px;
+    width: 22px;
+    height: 22px;
+
+    @include mobile {
+      width: 16px;
+      height: 16px;
+      top: -12px;
+      right: -12px;
+    }
+
+    &:hover path {
+      stroke: var(--active);
+
+    }
+
+    & path {
+      transition: stroke 0.3s ease-in-out;
+      stroke: #FFFFFF;
+    }
+  }
+}

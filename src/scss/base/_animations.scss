@@ -3,3 +3,34 @@
   4% {transform: translateY(-30px);}
   6% {transform: translateY(-15px);}
 }
+
+@keyframes fadeInOut {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    left: -500px;
+  }
+  100% {
+    left: 20px;
+  }
+}
