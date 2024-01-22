@@ -3,6 +3,7 @@
 
   a {
     transition: color 0.3s ease-in-out;
+
     &:hover {
       color: var(--accent);
     }
@@ -13,7 +14,10 @@
   }
 
   svg {
-    path {transition: fill 0.3s ease-in-out;}
+    path {
+      transition: fill 0.3s ease-in-out;
+    }
+
     &:hover * {
       fill: var(--accent);
     }
@@ -40,13 +44,12 @@
   &__logo-link {
     height: 100%;
   }
+
   &__logo {
     height: 100%;
   }
 
   &__nav {
-    margin-right: auto;
-    margin-left: 116px;
     margin-top: 11px;
     font-size: 20px;
 
@@ -61,7 +64,7 @@
 
   &__nav-list {
     display: flex;
-    gap: 65px;
+    gap: 40px;
   }
 
   &__social {

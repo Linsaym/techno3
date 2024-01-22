@@ -1,36 +1,41 @@
 <!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Стартовый шаблон</title>
-    <link rel="stylesheet" href="./css/main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Технократ</title>
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="icon" href="./img/header/logo.svg" type="image/x-icon">
 </head>
 <body>
 
 <header class="header">
     <div class="container">
         <div class="header__row">
-            <a href="./index.html" class="header__logo-link">
+            <a href="./index.html" class="header__logo-link" style="display: block">
                 <img src="./img/header/logo.svg" alt="Технократ логотип" class="header__logo">
             </a>
             <nav class="header__nav">
                 <ul class="header__nav-list">
                     <li><a href="./service-centres.html">Сервисные центры</a></li>
-                    <li><a href="./knowledge.html">База знаний</a></li>
-                    <li><a href="#">Статус заказа</a></li>
+                    <li><a href="./index.html">О нас</a></li>
+                    <li><a href="./order-status.html">Статус заказа</a></li>
+                    <li><a href="./products.html">Наши товары</a></li>
+                    <li><a href="./vacancy.html">Вакансии</a></li>
                 </ul>
             </nav>
             <div class="header__social">
                 <a href="tel:+73912223041" class="header__phone">+7 (391) 222-30-41</a>
-                <a href="mailto:technocrat.servise@gmail.com" class="header__mail">technocrat.servise@gmail.com</a>
+                <a href="mailto:technocrat@internet.ru" class="header__mail">technocrat@internet.ru</a>
                 <div class="header__icons">
-                    <a href="#">
+                    <a href="https://vk.com/colibriservic">
                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_5_361)">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.10883 2.10883C0 4.21766 0 7.61175 0 14.4V15.6C0 22.3883 0 25.7823 2.10883 27.8912C4.21766 30 7.61175 30 14.4 30H15.6C22.3883 30 25.7823 30 27.8912 27.8912C30 25.7823 30 22.3883 30 15.6V14.4C30 7.61175 30 4.21766 27.8912 2.10883C25.7823 0 22.3883 0 15.6 0H14.4C7.61175 0 4.21766 0 2.10883 2.10883ZM5.06257 9.12506C5.22507 16.9251 9.12506 21.6126 15.9626 21.6126H16.3501V17.1501C18.8626 17.4001 20.7625 19.2376 21.525 21.6126H25.0751C24.1001 18.0626 21.5374 16.1001 19.9374 15.3501C21.5374 14.4251 23.7874 12.1751 24.3249 9.12506H21.0999C20.3999 11.6001 18.3251 13.8501 16.3501 14.0626V9.12506H13.125V17.7751C11.125 17.2751 8.60006 14.8501 8.48756 9.12506H5.06257Z" fill="white"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M2.10883 2.10883C0 4.21766 0 7.61175 0 14.4V15.6C0 22.3883 0 25.7823 2.10883 27.8912C4.21766 30 7.61175 30 14.4 30H15.6C22.3883 30 25.7823 30 27.8912 27.8912C30 25.7823 30 22.3883 30 15.6V14.4C30 7.61175 30 4.21766 27.8912 2.10883C25.7823 0 22.3883 0 15.6 0H14.4C7.61175 0 4.21766 0 2.10883 2.10883ZM5.06257 9.12506C5.22507 16.9251 9.12506 21.6126 15.9626 21.6126H16.3501V17.1501C18.8626 17.4001 20.7625 19.2376 21.525 21.6126H25.0751C24.1001 18.0626 21.5374 16.1001 19.9374 15.3501C21.5374 14.4251 23.7874 12.1751 24.3249 9.12506H21.0999C20.3999 11.6001 18.3251 13.8501 16.3501 14.0626V9.12506H13.125V17.7751C11.125 17.2751 8.60006 14.8501 8.48756 9.12506H5.06257Z"
+                                      fill="white"/>
                             </g>
                             <defs>
                                 <clipPath id="clip0_5_361">
@@ -39,9 +44,11 @@
                             </defs>
                         </svg>
                     </a>
-                    <a href="#">
+                    <a href="" class="tg-link">
                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 15C0 23.2843 6.71573 30 15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0C6.71573 0 0 6.71573 0 15ZM12.25 21.875L12.5052 18.0514L12.505 18.0513L19.4606 11.7744C19.7658 11.5035 19.3939 11.3713 18.9887 11.6171L10.4045 17.0327L6.69668 15.8754C5.89594 15.6302 5.89019 15.08 6.87645 14.6844L21.3252 9.11304C21.9851 8.81344 22.622 9.27154 22.3701 10.2816L19.9095 21.8769C19.7377 22.7009 19.2398 22.898 18.55 22.5174L14.8017 19.7481L13 21.5C12.9943 21.5055 12.9887 21.511 12.983 21.5165C12.7815 21.7127 12.6148 21.875 12.25 21.875Z" fill="white"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M0 15C0 23.2843 6.71573 30 15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0C6.71573 0 0 6.71573 0 15ZM12.25 21.875L12.5052 18.0514L12.505 18.0513L19.4606 11.7744C19.7658 11.5035 19.3939 11.3713 18.9887 11.6171L10.4045 17.0327L6.69668 15.8754C5.89594 15.6302 5.89019 15.08 6.87645 14.6844L21.3252 9.11304C21.9851 8.81344 22.622 9.27154 22.3701 10.2816L19.9095 21.8769C19.7377 22.7009 19.2398 22.898 18.55 22.5174L14.8017 19.7481L13 21.5C12.9943 21.5055 12.9887 21.511 12.983 21.5165C12.7815 21.7127 12.6148 21.875 12.25 21.875Z"
+                                  fill="white"/>
                         </svg>
                     </a>
                 </div>
@@ -53,17 +60,20 @@
     </div>
 </header>
 <div class="mobile-nav">
-	<ul class="mobile-nav__list">
-		<li><a href="./index.html" class="active">Главная</a></li>
-		<li><a href="./service-centres.html">Сервисные центры</a></li>
-		<li><a href="./knowledge.html">База знаний</a></li>
-		<li><a href="#!">Статус заказа</a></li>
-	</ul>
+    <ul class="mobile-nav__list">
+        <li><a href="./index.html" class="active">Главная</a></li>
+        <li><a href="./service-centres.html">Сервисные центры</a></li>
+        <li><a href="./index.html">О нас</a></li>
+        <li><a href="./order-status.html">Статус заказа</a></li>
+        <li><a href="./products.html">Наши товары</a></li>
+        <li><a href="./vacancy.html">Вакансии</a></li>
+    </ul>
 </div>
 
-<section class="top">
+<main>
+  <section class="top">
     <div class="container">
-        <div class="top__inner grid">
+        <div class="top__inner flex">
             <div class="top__text">
                 <h1 class="top__title">Ремонт электроники в Красноярске</h1>
                 <p class="top__descr">Добро пожаловать в сеть сервисных центров "Технократ"! Мы ремонтируем ноутбуки,
@@ -72,140 +82,198 @@
                     и
                     качественными материалами.</p>
             </div>
+            <div class="top__maps flex">
+                <div class="top__maps-card">
+                    <div class="top__maps-card-map">
+                        <script type="text/javascript" charset="utf-8" async
+                                src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Abfaea2a23e4643a2d9849c4a181caddcc70859723093a80afe6b2bab235595c2&amp;width=500&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+                    </div>
+                </div>
+                <div class="top__maps-card">
+                    <div class="top__maps-card-map">
+                        <script type="text/javascript" charset="utf-8" async
+                                src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A733ea373d26ac667ab60a5dc6abe57161e7b47a66a85969babfa74f716997901&amp;width=500&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
-<section class="service">
-    <div class="container">
-        <div class="service__inner">
-            <h2 class="service__title title">
-                Наши услуги
-            </h2>
-            <div class="swiper service__slider">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="service__card">
-                            <h3 class="service__card-title">Ремонт орг техники</h3>
-                            <img src="./img/service/принтер.png" alt="" class="service__card-img">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="service__card">
-                            <h3 class="service__card-title">СЛОЖНЫЙ РЕМОНТ</h3>
-                            <img src="./img/service/сложн.png" alt="" class="service__card-img">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="service__card">
-                            <h3 class="service__card-title">РЕМОНТ КОФЕВАРОК</h3>
-                            <img src="./img/service/кофе.png" alt="" class="service__card-img">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="service__card">
-                            <h3 class="service__card-title">РЕМОНТ МОНИТОРОВ / ТЕЛЕВИЗОРОВ</h3>
-                            <img src="./img/service/мон-тел.png" alt="" class="service__card-img">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="service__card">
-                            <h3 class="service__card-title">РЕМОНТ МЕЛ. БЫТ. ТЕХНИКИ</h3>
-                            <img src="./img/service/мел-быт.png" alt="" class="service__card-img">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="service__card">
-                            <h3 class="service__card-title">РЕМОНТ КОМПЬЮТЕРОВ</h3>
-                            <img src="./img/service/комп.png" alt="" class="service__card-img">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="service__card">
-                            <h3 class="service__card-title">РЕМОНТ ТЕЛЕФОНОВ / СМАРТФОНОВ /ПЛАНШЕТОВ</h3>
-                            <img src="./img/service/тел.png" alt="" class="service__card-img">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="service__card">
-                            <h3 class="service__card-title">РЕМОНТ НОУТБУКОВ</h3>
-                            <img src="./img/service/ноут.png" alt="" class="service__card-img">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="service__card">
-                            <h3 class="service__card-title">ПРОДАЖА АКСЕССУАРОВ ДЛЯ ГАДЖЕТОВ</h3>
-                            <img src="./img/service/акс-гад.png" alt="" class="service__card-img">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="service__card">
-                            <h3 class="service__card-title">ИЗГОТОВЛЕНИЕ СЛОЖНЫХ КЛЮЧЕЙ</h3>
-                            <img src="./img/service/слож-кл.png" alt="" class="service__card-img">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="service__card">
-                            <h3 class="service__card-title">ПРОДАЖА АКСЕССУАРОВ ДЛЯ ЧАСОВ</h3>
-                            <img src="./img/service/акс-час.png" alt="" class="service__card-img">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="service__card">
-                            <h3 class="service__card-title">ИЗГОТОВЛЕНИЕ АВТО КЛЮЧЕЙ</h3>
-                            <img src="./img/service/авто-кл.png" alt="" class="service__card-img">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="service__card">
-                            <h3 class="service__card-title">ИЗГОТОВЛЕНИЕ ЧИПОВ ВСЕХ ВИДОВ</h3>
-                            <img src="./img/service/чип.png" alt="" class="service__card-img">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="service__card">
-                            <h3 class="service__card-title">РЕМОНТ ЧАСОВ</h3>
-                            <img src="./img/service/час.png" alt="" class="service__card-img">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="service__card">
-                            <h3 class="service__card-title">ИЗГОТОВЛЕНИЕ КЛЮЧЕЙ</h3>
-                            <img src="./img/service/ключ.png" alt="" class="service__card-img">
-                        </div>
-                    </div>
+  <section class="service">
+  <div class="container">
+    <div class="service__inner">
+      <h2 class="visually-hidden">Технократ</h2>
+      <p class="service__title title">
+        Наши услуги:
+      </p>
+      <div class="swiper service__slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="service__card">
+              <h4 class="service__card-title">Ремонт оргтехники</h4>
+              <div class="service__card-img-holder">
+                <img src="./img/service/принтер.png" alt="" class="service__card-img">
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="service__card">
+              <h5 class="service__card-title">СЛОЖНЫЙ РЕМОНТ</h5>
+              <div class="service__card-img-holder">
+                <img src="./img/service/сложн.png" alt="" class="service__card-img">
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="service__card">
+              <h5 class="service__card-title">Ремонт и обслуживание кофейных аппаратов</h5>
+              <div class="service__card-img-holder">
+                <img src="./img/service/кофе.png" alt="" class="service__card-img">
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="service__card">
+              <h4 class="service__card-title">РЕМОНТ МОНИТОРОВ / ТЕЛЕВИЗОРОВ</h4>
+              <div class="service__card-img-holder">
+                <img src="./img/service/мон-тел.png" alt="" class="service__card-img">
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="service__card">
+              <h3 class="service__card-title">ИЗГОТОВЛЕНИЕ КЛЮЧЕЙ</h3>
+              <div class="service__card-img-holder">
+                <img src="./img/service/ключ.png" alt="" class="service__card-img">
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="service__card">
+              <h3 class="service__card-title">РЕМОНТ КОМПЬЮТЕРОВ</h3>
+              <div class="service__card-img-holder">
+                <img src="./img/service/комп.png" alt="" class="service__card-img">
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="service__card">
+              <h5 class="service__card-title">РЕМОНТ ЧАСОВ</h5>
+              <div class="service__card-img-holder">
+                <img src="./img/service/час.png" alt="" class="service__card-img">
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="service__card">
+              <h3 class="service__card-title">РЕМОНТ ТЕЛЕФОНОВ / СМАРТФОНОВ / ПЛАНШЕТОВ</h3>
+              <div class="service__card-img-holder">
+                <img src="./img/service/тел.png" alt="" class="service__card-img">
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="service__card">
+              <h4 class="service__card-title">РЕМОНТ НОУТБУКОВ</h4>
+              <div class="service__card-img-holder">
+                <img src="./img/service/ноут.png" alt="" class="service__card-img">
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="service__card">
+              <h6 class="service__card-title">ПРОДАЖА АКСЕССУАРОВ ДЛЯ ГАДЖЕТОВ</h6>
+              <div class="service__card-img-holder">
+                <img src="./img/service/акс-гад.png" alt="" class="service__card-img">
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="service__card">
+              <h6 class="service__card-title">ИЗГОТОВЛЕНИЕ СЛОЖНЫХ КЛЮЧЕЙ</h6>
+              <div class="service__card-img-holder">
+                <img src="./img/service/слож-кл.png" alt="" class="service__card-img">
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="service__card">
+              <h6 class="service__card-title">ПРОДАЖА АКСЕССУАРОВ ДЛЯ ЧАСОВ</h6>
+              <div class="service__card-img-holder">
+                <img src="./img/service/акс-час.png" alt="" class="service__card-img">
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="service__card">
+              <h5 class="service__card-title">ИЗГОТОВЛЕНИЕ АВТО КЛЮЧЕЙ</h5>
+              <div class="service__card-img-holder">
+                <img src="./img/service/авто-кл.png" alt="" class="service__card-img">
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="service__card">
+              <h5 class="service__card-title">ИЗГОТОВЛЕНИЕ ЧИПОВ ВСЕХ ВИДОВ</h5>
+              <div class="service__card-img-holder">
+                <img src="./img/service/чип.png" alt="" class="service__card-img">
+              </div>
+            </div>
+          </div>
 
-                </div>
+          <div class="swiper-slide">
+            <div class="service__card">
+              <h4 class="service__card-title">РЕМОНТ МЕЛ. БЫТ. ТЕХНИКИ</h4>
+              <div class="service__card-img-holder">
+                <img src="./img/service/мел-быт.png" alt="" class="service__card-img">
+              </div>
             </div>
-                <div class="swiper-scrollbar"></div>
-                <div class="swiper-pagination"></div>
-            <div class="service__nav flex">
-                <div class="swiper-prev swiper-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="43" viewBox="0 0 50 43" fill="none">
-                        <g opacity="0.6">
-                            <rect width="49.502" height="42.1055" rx="21.0527" fill="#193E4C"/>
-                            <path d="M14.7598 20.5303C14.7598 20.9928 14.9617 21.3892 15.3967 21.7328L27.483 31.8017C27.8247 32.0924 28.2597 32.251 28.7724 32.251C29.7977 32.251 30.621 31.5639 30.621 30.6786C30.621 30.2425 30.4036 29.8593 30.0618 29.5554L19.1717 20.5303L30.0618 11.5053C30.4036 11.2014 30.621 10.805 30.621 10.3821C30.621 9.49681 29.7977 8.80969 28.7724 8.80969C28.2597 8.80969 27.8247 8.96826 27.483 9.25896L15.3967 19.3147C14.9617 19.6714 14.7598 20.0679 14.7598 20.5303Z"
-                                  fill="#78E8FC"/>
-                        </g>
-                    </svg>
-                </div>
-                <div class="swiper-next swiper-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="51" height="43" viewBox="0 0 51 43" fill="none">
-                        <g opacity="0.6">
-                            <rect x="0.733398" width="49.502" height="42.1055" rx="21.0527" fill="#193E4C"/>
-                            <path d="M35.4756 20.5329C35.4601 20.0703 35.2581 19.6738 34.8385 19.317L22.7496 9.25906C22.3922 8.96829 21.9727 8.80969 21.4599 8.80969C20.4188 8.80969 19.6108 9.49696 19.6108 10.3825C19.6108 10.8054 19.8128 11.2019 20.1702 11.5059L31.0471 20.5329L20.1702 29.5599C19.8128 29.8639 19.6108 30.2472 19.6108 30.6833C19.6108 31.5689 20.4188 32.2561 21.4599 32.2561C21.9571 32.2561 22.3922 32.0975 22.7496 31.8068L34.8385 21.7356C35.2736 21.392 35.4756 20.9955 35.4756 20.5329Z"
-                                  fill="#78E8FC"/>
-                        </g>
-                    </svg>
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
+      <div class="swiper-scrollbar"></div>
+      <div class="swiper-pagination"></div>
+      <div class="service__nav flex">
+        <div class="swiper-btn swiper-open" id="toggleViewButton">
+          <svg width="50" height="43" viewBox="0 0 50 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g opacity="0.6">
+              <rect width="49.502" height="42.1055" rx="21.0527" fill="#193E4C"/>
+              <path
+                  d="M24.7207 28.8613C25.1831 28.8613 25.5795 28.6594 25.9231 28.2244L35.992 16.1381C36.2827 15.7964 36.4413 15.3614 36.4413 14.8487C36.4413 13.8234 35.7542 13.0001 34.8689 13.0001C34.4328 13.0001 34.0496 13.2175 33.7457 13.5593L24.7207 24.4494L15.6956 13.5593C15.3917 13.2175 14.9953 13.0001 14.5724 13.0001C13.6871 13.0001 13 13.8234 13 14.8487C13 15.3614 13.1586 15.7964 13.4493 16.1381L23.505 28.2244C23.8618 28.6594 24.2582 28.8613 24.7207 28.8613Z"
+                  fill="#78E8FC"/>
+            </g>
+          </svg>
+
+        </div>
+        <div class="swiper-prev swiper-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="43" viewBox="0 0 50 43" fill="none">
+            <g opacity="0.6">
+              <rect width="49.502" height="42.1055" rx="21.0527" fill="#193E4C"/>
+              <path
+                  d="M14.7598 20.5303C14.7598 20.9928 14.9617 21.3892 15.3967 21.7328L27.483 31.8017C27.8247 32.0924 28.2597 32.251 28.7724 32.251C29.7977 32.251 30.621 31.5639 30.621 30.6786C30.621 30.2425 30.4036 29.8593 30.0618 29.5554L19.1717 20.5303L30.0618 11.5053C30.4036 11.2014 30.621 10.805 30.621 10.3821C30.621 9.49681 29.7977 8.80969 28.7724 8.80969C28.2597 8.80969 27.8247 8.96826 27.483 9.25896L15.3967 19.3147C14.9617 19.6714 14.7598 20.0679 14.7598 20.5303Z"
+                  fill="#78E8FC"/>
+            </g>
+          </svg>
+        </div>
+        <div class="swiper-next swiper-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="51" height="43" viewBox="0 0 51 43" fill="none">
+            <g opacity="0.6">
+              <rect x="0.733398" width="49.502" height="42.1055" rx="21.0527" fill="#193E4C"/>
+              <path
+                  d="M35.4756 20.5329C35.4601 20.0703 35.2581 19.6738 34.8385 19.317L22.7496 9.25906C22.3922 8.96829 21.9727 8.80969 21.4599 8.80969C20.4188 8.80969 19.6108 9.49696 19.6108 10.3825C19.6108 10.8054 19.8128 11.2019 20.1702 11.5059L31.0471 20.5329L20.1702 29.5599C19.8128 29.8639 19.6108 30.2472 19.6108 30.6833C19.6108 31.5689 20.4188 32.2561 21.4599 32.2561C21.9571 32.2561 22.3922 32.0975 22.7496 31.8068L34.8385 21.7356C35.2736 21.392 35.4756 20.9955 35.4756 20.5329Z"
+                  fill="#78E8FC"/>
+            </g>
+          </svg>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
-<link rel="stylesheet" href="../../scss/blocks/_maps.scss">
-<section class="benefits">
+  <section class="benefits">
     <div class="container">
         <div class="benefits__inner">
-            <h2 class="benefits__title title">Почему выбирают нас</h2>
+            <h2 class="visually-hidden">Ремонт техники</h2>
+            <p class="benefits__title title">Почему выбирают нас</p>
             <ul class="benefits__list grid">
                 <li class="benefits__card flex">
                     <h3 class="benefits__card-title">ТОЧНО В СРОК</h3>
@@ -227,19 +295,19 @@
         </div>
     </div>
 </section>
-<section class="cta">
+  <section class="cta">
     <div class="container">
         <div class="cta__inner flex">
-            <form action="" class="cta__form flex">
-                <h2 class="cta__title title">
+            <form action="" class="cta__form flex" id="form">
+                <p class="cta__title title">
                     Оставить заявку
-                </h2>
+                </p>
                 <p class="cta__descr">
                     Введите номер телефона в форму, чтобы мы могли связаться с вами
                 </p>
                 <div class="cta__input flex">
-                    <input type="tel" name="" id="" placeholder="Введите номер" class="phone">
-                    <button type="submit">
+                    <input type="tel" name="phone" id="phone" placeholder="Введите номер" class="phone">
+                    <button type="submit" id="button">
                         <img src="./img/icons/telegram-send.png" alt="">
                     </button>
                 </div>
@@ -247,6 +315,7 @@
         </div>
     </div>
 </section>
+</main>
 <footer class="footer">
     <div class="container">
         <div class="footer__inner">
@@ -255,16 +324,16 @@
                     <img src="./img/footer/logo.png" alt="">
                 </div>
                 <div class="footer__nav flex">
-                    <a href="#">Сервисные центры</a>
-                    <a href="./knowledge.html">База знаний</a>
-                    <a href="#">Статус заказа</a>
+                    <a href="./service-centres.html">Сервисные центры</a>
+                    <a href="./index.html">О нас</a>
+                    <a href="./order-status.html">Статус заказа</a>
                 </div>
                 <div class="footer__social flex">
                     <a href="tel:+73912223041">Колл-центр: +7 (391) 222-30-41</a>
-                    <a href="mailto:technocrat.servise@gmail.com">Почта: technocrat.servise@gmail.com</a>
+                    <a href="mailto:technocrat@internet.ru">Почта: technocrat@internet.ru</a>
                 </div>
                 <div class="footer__icons flex">
-                    <a href="" class="footer__icon">
+                    <a href="https://vk.com/colibriservic" class="footer__icon">
                         <svg width="46" height="47" viewBox="0 0 46 47" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_7_1782)">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -278,7 +347,7 @@
                             </defs>
                         </svg>
                     </a>
-                    <a href="" class="footer__icon">
+                    <a href="" class="footer__icon tg-link">
                         <svg width="46" height="47" viewBox="0 0 46 47" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
                                   d="M0 23.5C0 36.2025 10.2975 46.5 23 46.5C35.7025 46.5 46 36.2025 46 23.5C46 10.7975 35.7025 0.5 23 0.5C10.2975 0.5 0 10.7975 0 23.5ZM18.7833 34.0417L19.1747 28.1788L19.1743 28.1786L29.8395 18.5541C30.3076 18.1386 29.7373 17.9361 29.116 18.3129L15.9536 26.6168L10.2682 24.8423C9.04044 24.4664 9.03162 23.6227 10.5439 23.0161L32.6986 14.4733C33.7105 14.0139 34.6871 14.7164 34.3008 16.2651L30.5279 34.0446C30.2644 35.3081 29.501 35.6103 28.4433 35.0267L22.6959 30.7804L19.9333 33.4667C19.9246 33.4752 19.916 33.4836 19.9073 33.492C19.5984 33.7928 19.3427 34.0417 18.7833 34.0417Z"
@@ -289,12 +358,41 @@
             </div>
         </div>
         <div class="footer__bottom flex">
-            <p class="footer__descr footer__ip">ИП Микрюков А.В ИНН 244600177262</p>
+            <p class="footer__descr footer__ip">ИП Микрюков А.В ИНН&nbsp244600177262</p>
             <p class="footer__descr">Copyright © 2023 Технократ. Все права защищены.</p>
         </div>
     </div>
 </footer>
+<a href="https://t.me/Infern397" class="telegram-ball tg-link">
+    <div class="telegram-ball__block">
+        <img src="./img/icons/telegram-logo.svg" alt="Наш телеграм">
+    </div>
+</a>
+<div class="call-popup">
+  <div class="call-popup__wrapper">
+    <h3 class="call-popup__title">
+      Мы ждем вашего звонка
+    </h3>
+    <a href="tel:+73912223041" class="call-popup__tel">
+      +7 (391) 222-30-41
+    </a>
+
+    <svg class="call-popup__close-btn" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+      <g id="SVGRepo_iconCarrier">
+        <path
+            d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12Z"
+            stroke="#1C274C" stroke-width="1.5"></path>
+        <path d="M14.5 9.50002L9.5 14.5M9.49998 9.5L14.5 14.5" stroke="#1C274C" stroke-width="1.5"
+              stroke-linecap="round"></path>
+      </g>
+    </svg>
+  </div>
+</div>
+
 <script src="./js/index.bundle.js"></script>
+<script src="./js/main.bundle.js"></script>
 
 </body>
 </html>
